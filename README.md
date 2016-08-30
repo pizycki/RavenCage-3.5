@@ -12,7 +12,7 @@ To install Windows Containers on your machine follow this [guide](https://msdn.m
 
 ## Usage
 
-Run server on port `8080` in `debug` mode and interactive console.
+Run server on port `80` in `debug` mode and interactive console.
 
 ```
 docker run -it -p 80:8080 -v C:\db\:C:\RavenDB\Server\Databases\ pizycki/ravendb
@@ -26,7 +26,7 @@ docker run -it -p 80:8080 -v C:\db\:C:\RavenDB\Server\Databases\ pizycki/ravendb
 
 **DON'T CLOSE IT** - for now, you must not close console with running container, since it will terminate application and container work. Yeah, it'll be fixed in future :/
 
-**If you want customize `web.config`** simply map it from your host to config contained in the container. It's located under `C:\RavenDB\Web\web.config` inside container. 
+**If you want to customize your `web.config`** simply map it from your host to config contained in the container. It's located under `C:\RavenDB\Web\web.config` inside the container. 
 
 
 ---
