@@ -14,9 +14,17 @@ To install Windows Containers on your machine follow this [guide](https://msdn.m
 Run server on port `8080` in `debug` mode and interactive console.
 
 ```
-docker run -it -p 8080:8080 pizycki/ravendb:latest
+docker run -it -p 80:8080 -v C:\db\:C:\RavenDB\Server\Databases\ pizycki/ravendb
 ```
 
+**Map ports:** By default RavenDB listens on port 8080. Let's map it to port `80`.
+
+**Map volumes:** By default RavenDB stores its databases in `C:\RavenDB\Server\Databases\`. Let's map it to `C:\db\`. You can also use URI or other disk partitions.
+
+**Raven Studio:** Inspect created container for `IPAddress` and use it to connect to Raven Studio with web browser.
+![Raven Studio from containered RavenDB](http://imgur.com/yRTUMyW)
+
+** DON'T CLOSE IT ** - for now, you must not close console with running container, since it will terminate application and container work. Yeah, it'll be fixed in future :/
 ---
 ## Build
 
