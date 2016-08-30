@@ -1,6 +1,9 @@
 # Raven Cage
 ### _Windows Server Container image for hosting RavenDB server instance._
 
+* RavenDB : [official site](https://ravendb.net/)
+* Windows Server Containers: [official site at MSDN](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome)
+
 ## Requirements
 
 Windows 2016 TP3 (tested on TP5) with installed Windows Containers.
