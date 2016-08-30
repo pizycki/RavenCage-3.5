@@ -22,9 +22,12 @@ docker run -it -p 80:8080 -v C:\db\:C:\RavenDB\Server\Databases\ pizycki/ravendb
 **Map volumes:** By default RavenDB stores its databases in `C:\RavenDB\Server\Databases\`. Let's map it to `C:\db\`. You can also use URI or other disk partitions.
 
 **Raven Studio:** Inspect created container for `IPAddress` and use it to connect to Raven Studio with web browser.
-![Raven Studio from containered RavenDB](http://imgur.com/yRTUMyW)
 
-** DON'T CLOSE IT ** - for now, you must not close console with running container, since it will terminate application and container work. Yeah, it'll be fixed in future :/
+**DON'T CLOSE IT** - for now, you must not close console with running container, since it will terminate application and container work. Yeah, it'll be fixed in future :/
+
+**If you want customize `web.config`** simply map it from your host to config contained in the container. It's located under `C:\RavenDB\Web\web.config` inside container. 
+
+
 ---
 ## Build
 
