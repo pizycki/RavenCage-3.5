@@ -1,5 +1,6 @@
-# Raven Cage
+# RavenDB 3.5 Container
 ### _Windows Server Container image for hosting RavenDB server instance._
+### Raven Cage project
 
 * RavenDB : [official site](https://ravendb.net/)
 * Windows Server Containers: [official site at MSDN](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome)
