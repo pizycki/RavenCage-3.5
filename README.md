@@ -1,33 +1,33 @@
-# RavenDB 3.5 Container
-### _Windows Server Container image for hosting RavenDB server instance._
-### Raven Cage project
+# RavenDB in Docker container
+
+This container spins up RavenDB single node server instance.
 
 * RavenDB : [official site](https://ravendb.net/)
-* Windows Server Containers: [official site at MSDN](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome)
+* Docker: [official site](https://www.docker.com/)
+* Windows Containers: [site at MSDN](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome)
 
-## Requirements
+# Requirements
 
-Windows 2016 TP3 (tested on TP5) with installed Windows Containers.
+Windows 2016 build 14393 with installed Windows Containers.
 To install Windows Containers on your machine follow this [guide](https://msdn.microsoft.com/pl-pl/virtualization/windowscontainers/quick_start/quick_start_windows_server).
 
 ## Usage
 
-Run server on port `80` in `debug` mode and interactive console.
+### Run in background
+Run server on port `8080` as service.
 
 ```
-docker run -it -p 80:8080 -v C:\db\:C:\RavenDB\Server\Databases\ pizycki/ravendb
+docker run -d pizycki/ravendb:latest
 ```
 
-**Map ports:** By default RavenDB listens on port 8080. Let's map it to port `80`.
+### Run in console and debug mode
+Run server on port `8080` in `debug` mode and interactive console.
 
-**Map volumes:** By default RavenDB stores its databases in `C:\RavenDB\Server\Databases\`. Let's map it to `C:\db\`. You can also use URI or other disk partitions.
+```
+docker run -it -e mode=debug pizycki/ravendb:latest
+```
 
-**Raven Studio:** Inspect created container for `IPAddress` and use it to connect to Raven Studio with web browser.
-
-**DON'T CLOSE IT** - for now, you must not close console with running container, since it will terminate application and container work. Yeah, it'll be fixed in future :/
-
-**If you want to customize your `web.config`** simply map it from your host to config contained in the container. It's located under `C:\RavenDB\Web\web.config` inside the container. 
-
+> Running on IIS is not supported here.
 
 ---
 ## Build
@@ -39,3 +39,15 @@ Remember to replace `<tag>` with actual tag, i.e.: RavenDB version.
 ```
 docker build -t pizycki/ravendb:<tag> .
 ```
+
+# FAQ
+
+## I cannot access my RavenDB server website.
+There is something wrong with `localhost`, Win2016 and Docker. I have no idea what can that be.
+To get access to RavenDB website, get container IP. Simply type `docker inspect <container_ID>` and look for `Networks.IPAddress`.
+Make sure the port you mapped to is open in your firewall settings!
+
+## Will this work on Windows 10?
+No. Right now, Windows 10 supports only Windows Nano based containers, running on top of HyperV.
+
+_ref: [Are microsoft/windowsservercore containers working on Windows 10?](http://www.busydevelopers.com/article/44081337/Are+microsoft+windowsservercore+containers+working+on+Windows+10%3F)_
