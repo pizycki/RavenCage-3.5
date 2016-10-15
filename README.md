@@ -29,7 +29,22 @@ docker run -it -e mode=debug pizycki/ravendb:latest
 
 > Running on IIS is not supported here.
 
+### Map storage
+Map directory where your databases will be stored to `C:\db\` on your host. You can also map place in your network.
+```
+docker run -d -v C:\db\:C:\RavenDB\Server\Databases\ pizycki/ravendb:latest 
+```
+
+### Map RavenDB listen port
+Make you container listen on port `5555`
+```
+docker run -d -p 5555:8080 pizycki/ravendb:latest 
+```
+
+> Both **volume** and **port** mapping work with either `service` and `debug` mode.
+
 ---
+
 ## Build
 
 Build image with this command
