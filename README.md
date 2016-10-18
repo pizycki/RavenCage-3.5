@@ -63,6 +63,7 @@ To get access to RavenDB website, get container IP. Simply type `docker inspect 
 Make sure the port you mapped to is open in your firewall settings!
 
 ## Will this work on Windows 10?
-No. Right now, Windows 10 supports only Windows Nano based containers, running on top of HyperV.
+Yes! MS has just changed Windows 10 to support Hyper-V Server Core containers
 
-_ref: [Are microsoft/windowsservercore containers working on Windows 10?](http://www.busydevelopers.com/article/44081337/Are+microsoft+windowsservercore+containers+working+on+Windows+10%3F)_
+_ref: [Windows Container Requirements]
+(https://msdn.microsoft.com/en-us/virtualization/windowscontainers/deployment/system_requirements)
