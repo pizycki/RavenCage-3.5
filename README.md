@@ -66,4 +66,4 @@ Make sure the port you mapped to is open in your firewall settings!
 Yes! MS has just changed Windows 10 to support Hyper-V Server Core containers
 
 _ref: [Windows Container Requirements]
-(https://msdn.microsoft.com/en-us/virtualization/windowscontainers/deployment/system_requirements)
+(https://msdn.microsoft.com/en-us/virtualization/windowscontainers/deployment/system_requirements)_
