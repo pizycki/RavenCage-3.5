@@ -29,7 +29,22 @@ docker run -it -e mode=debug pizycki/ravendb:latest
 
 > Running on IIS is not supported here.
 
+### Map storage
+Map directory where your databases will be stored to `C:\db\` on your host. You can also map place in your network.
+```
+docker run -d -v C:\db\:C:\RavenDB\Server\Databases\ pizycki/ravendb:latest 
+```
+
+### Map RavenDB listen port
+Make you container listen on port `5555`
+```
+docker run -d -p 5555:8080 pizycki/ravendb:latest 
+```
+
+> Both **volume** and **port** mapping work with either `service` and `debug` mode.
+
 ---
+
 ## Build
 
 Build image with this command
@@ -48,6 +63,7 @@ To get access to RavenDB website, get container IP. Simply type `docker inspect 
 Make sure the port you mapped to is open in your firewall settings!
 
 ## Will this work on Windows 10?
-No. Right now, Windows 10 supports only Windows Nano based containers, running on top of HyperV.
+Yes! MS has just changed Windows 10 to support Hyper-V Server Core containers
 
-_ref: [Are microsoft/windowsservercore containers working on Windows 10?](http://www.busydevelopers.com/article/44081337/Are+microsoft+windowsservercore+containers+working+on+Windows+10%3F)_
+_ref: [Windows Container Requirements]
+(https://msdn.microsoft.com/en-us/virtualization/windowscontainers/deployment/system_requirements)_
