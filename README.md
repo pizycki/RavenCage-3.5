@@ -51,13 +51,18 @@ docker run -d -p 5555:8080 pizycki/ravendb:latest
 
 ## Build
 
-Build image with this command
+Build image with `Build.ps1` script.
 
 Remember to replace `<tag>` with actual tag, i.e.: RavenDB version.
 
 ```
-docker build -t pizycki/ravendb:<tag> .
+& .\Build-Image.ps1 ` 
+    -Tag <RavenDB_version> `
+    -Latest `
+    -PushToDockerHub
 ```
+
+DockerHub credentials are stored in `credentials` file or can be passed through via parameters.
 
 # FAQ
 
