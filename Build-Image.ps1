@@ -48,7 +48,9 @@ function Push-ImageToDockerHub(
     write "Logging in to Docker Hub as [ $user ] ..."
     docker login -u $user -p $password
 
-    # TODO handle unsuccessful authentication
+    if ( Test-Path "$env:USERPROFILE\.docker\config.json" ) {
+        
+    }
 
     write "Pushing [ ${repository}:${tag} ] to Docker Hub..."
     docker push ${repository}:${tag}
@@ -116,6 +118,6 @@ if ( $PushToDockerHub ) {
     if ( !$DontSignOut ) {
         # Removes temporary file that holds user credentials
         # Ref: https://docs.docker.com/engine/reference/commandline/login/
-        rm "$env:USERPROFILE\.docker\config.json"
+        docker logout
     }
 }
