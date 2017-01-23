@@ -48,13 +48,11 @@ function Push-ImageToDockerHub(
     write "Logging in to Docker Hub as [ $user ] ..."
     docker login -u $user -p $password
 
-    if ( Test-Path "$env:USERPROFILE\.docker\config.json" ) {
-        
+    if ( $? ) {
+        write "Pushing [ ${repository}:${tag} ] to Docker Hub..."
+        docker push ${repository}:${tag}
+        write "Image pushed!"        
     }
-
-    write "Pushing [ ${repository}:${tag} ] to Docker Hub..."
-    docker push ${repository}:${tag}
-    write "Image pushed!"
 }
 
 function TagAsLatest([string]$repository){
