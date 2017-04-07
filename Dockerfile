@@ -7,6 +7,6 @@ EXPOSE 8080
 ENV mode=background
 
 # Download RavenDB server package from official build website
-ADD http://hibernatingrhinos.com/downloads/ravendb/35190-patch C:/RavenDB_Server.zip
+ADD http://hibernatingrhinos.com/downloads/ravendb/35194-Patch C:/RavenDB_Server.zip
 COPY Run-RavenDB.ps1 .
 CMD powershell ./Run-RavenDB.ps1 -Verbose
