@@ -1,5 +1,11 @@
 README.md
-LICENCE
-Build-Image.ps1
-credentials
 Snippets.md
+
+LICENCE
+
+credentials
+
+Build-AppVeyor.ps1
+Build-Manualy.ps1
+Common.psm1
+Docker.psm1

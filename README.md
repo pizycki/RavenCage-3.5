@@ -53,6 +53,14 @@ docker run -d -p 5555:8080 pizycki/ravendb:latest
 
 ## Build
 
+### Automated 
+[![Build status](https://ci.appveyor.com/api/projects/status/ab7oryewihivh46x?svg=true)](https://ci.appveyor.com/project/pizycki/ravencage-3-5)
+
+Automated build are initialized on every **tagged** commit. 
+
+Thanks to [AppVeyor](http://appyveyor.com) for letting use their platform! You are the real MVP!
+
+### Manual
 Build image with `Build.ps1` script.
 
 Remember to replace `<tag>` with actual tag, i.e.: RavenDB version.
