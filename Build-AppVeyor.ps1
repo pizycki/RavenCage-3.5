@@ -24,8 +24,16 @@ Import-Module .\Docker.psm1
 # Build
 ################################################
 
+# Check if commit is tagged, if no, break the build.
+# Set on AppVeyor flag: Build tags only.
+Get-EnvVariable "APPVEYOR_REPO_TAG"
+
+# Continue with build ...
+
+# Build image from Dockerfile
 Create-Image $repository $tag
 
+# Set image as 'latest' according to build settings.
 if ( $latest ) {
     Tag-AsLatest $repository $tag
 }
@@ -35,6 +43,7 @@ if ( $latest ) {
 # Publish
 ################################################
 
+# Publish on DockerHub, according to build settings.
 if ( $pushToDockerHub ) {
 
     # Publish tagged image to DockerHub
