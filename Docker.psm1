@@ -32,6 +32,7 @@ function Push-ImageToDockerHub(
     if ( $? ) {
         write "Pushing [ ${repository}:${tag} ] to Docker Hub..."
         docker push ${repository}:${tag}
+        if ( $LastExitCode -ne 0 ) { Exit-WithError "Error during pushin image to DockerHub." }
         write "Image pushed!"        
     }
 }
@@ -39,5 +40,6 @@ function Push-ImageToDockerHub(
 function Tag-AsLatest( [string]$repository ){
     write "Tagging image [ ${repository}:${tag} ] as latest..."
     docker tag ${repository}:${tag} ${repository}:latest
+    if ( $LastExitCode -ne 0 ) { Exit-WithError "Error during tagging image as 'latest'." }
     write "Tagged as 'latest' !"
 }

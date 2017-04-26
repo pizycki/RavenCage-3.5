@@ -27,7 +27,7 @@ Import-Module .\Docker.psm1
 Create-Image $repository $tag
 
 if ( $latest ) {
-    TagAsLatest $repository $tag
+    Tag-AsLatest $repository $tag
 }
 
 
