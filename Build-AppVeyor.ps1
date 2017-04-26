@@ -4,6 +4,7 @@
 
 Import-Module .\Common.psm1
 Import-Module .\Docker.psm1
+Import-Module .\Tests.psm1
 
 
 ################################################
@@ -37,6 +38,20 @@ Create-Image $repository $tag
 if ( $latest ) {
     Tag-AsLatest $repository $tag
 }
+
+
+################################################
+# Testing
+################################################
+
+# Run container
+$cName = "testo"
+docker run -d --name $cName ${repository}:${tag}
+
+Test-ContainerRunning $cName
+Test-RavenStudio $cName
+
+write "All tests passed."
 
 
 ################################################

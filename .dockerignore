@@ -9,3 +9,4 @@ Build-AppVeyor.ps1
 Build-Manualy.ps1
 Common.psm1
 Docker.psm1
+Tests.psm1
