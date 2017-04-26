@@ -2,6 +2,7 @@
     $errorExitCode = 1
     Write-Error $message
     $host.SetShouldExit( $errorExitCode )
+    exit
 }
 
 function Get-EnvVariable( $name ){

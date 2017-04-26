@@ -6,7 +6,6 @@ Import-Module .\Common.psm1
 Import-Module .\Docker.psm1
 
 
-
 ################################################
 # Variables
 ################################################
@@ -15,11 +14,10 @@ Import-Module .\Docker.psm1
 [string]  $dockerHubUser      = Get-EnvVariable "DOCKERHUB_USER"
 [string]  $dockerHubPassword  = Get-EnvVariable "DOCKERHUB_PASSWORD"
 [string]  $branch             = Get-EnvVariable "APPVEYOR_REPO_BRANCH"
-[string]  $tag                = "bla" # Get-EnvVariable "APPVEYOR_REPO_TAG_NAME" # COMMENT IT OUT BEFORE RELEASE
+[string]  $tag                = Get-EnvVariable "APPVEYOR_REPO_TAG_NAME"
 [boolean] $latest             = [System.Convert]::ToBoolean((Get-EnvVariable "IS_LATEST"))
 [boolean] $tagged             = [System.Convert]::ToBoolean((Get-EnvVariable "APPVEYOR_REPO_TAG"))
 [boolean] $pushToDockerHub    = [System.Convert]::ToBoolean((Get-EnvVariable "PUSH_TO_DOCKERHUB"))
-
 
 
 ################################################
@@ -31,7 +29,6 @@ Create-Image $repository $tag
 if ( $latest ) {
     TagAsLatest $repository $tag
 }
-
 
 
 ################################################
