@@ -44,6 +44,9 @@ if ( $latest ) {
 # Testing
 ################################################
 
+# Enable port 8080
+netsh advfirewall firewall add rule name="Open Port 8080" dir=in action=allow protocol=TCP localport=8080
+
 # Run container
 $cName = "testo"
 docker run -d --name $cName ${repository}:${tag}
