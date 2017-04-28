@@ -3,7 +3,7 @@ Import-Module .\Common.psm1
 function Test-ContainerRunning([string] $name) {
     # Check is container running
     $running_containers = (docker ps | sls $name).Length
-    if ( $running_containers == 0 ) { Exit-WithError "Test FAILED: No running container." }
+    if ( $running_containers -eq 0 ) { Exit-WithError "Test FAILED: No running container." }
 }
 
 function Test-RavenStudio([string] $name) {
