@@ -10,3 +10,6 @@ Build-Manualy.ps1
 Common.psm1
 Docker.psm1
 Tests.psm1
+
+Before.ps1
+After.ps1

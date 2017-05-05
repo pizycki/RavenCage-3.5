@@ -17,3 +17,9 @@ docker rmi (docker images -q)[0] -f; docker images
 ```
 docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" <container_id>
 ```
+
+**Stop and delete all running containers**
+```
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+```
