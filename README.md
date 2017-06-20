@@ -8,7 +8,7 @@ This container spins up RavenDB single node server instance.
 * Docker : [official site](https://www.docker.com/)
 * Windows Containers : [site at MSDN](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome)
 
-![DockerHub Stars](https://img.shields.io/docker/stars/pizycki/ravendb.svg) [![DockerHub Pulls](https://img.shields.io/docker/pulls/pizycki/ravendb.svg)]() [![GitHub stars](https://img.shields.io/github/stars/pizycki/ravencage-3.5.svg?style=social&label=Star)]() [![Build status](https://ci.appveyor.com/api/projects/status/ab7oryewihivh46x?svg=true)](https://ci.appveyor.com/project/pizycki/ravencage-3-5)
+[![DockerHub Stars](https://img.shields.io/docker/stars/pizycki/ravendb.svg)](https://hub.docker.com/r/pizycki/ravendb) [![DockerHub Pulls](https://img.shields.io/docker/pulls/pizycki/ravendb.svg)](https://hub.docker.com/r/pizycki/ravendb) [![GitHub stars](https://img.shields.io/github/stars/pizycki/ravencage-3.5.svg?style=social&label=Star)](https://github.com/pizycki/RavenCage-3.5) [![Build status](https://ci.appveyor.com/api/projects/status/ab7oryewihivh46x?svg=true)](https://ci.appveyor.com/project/pizycki/ravencage-3-5)
 
 # Requirements
 
