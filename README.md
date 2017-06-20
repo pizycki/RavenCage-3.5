@@ -8,6 +8,8 @@ This container spins up RavenDB single node server instance.
 * Docker : [official site](https://www.docker.com/)
 * Windows Containers : [site at MSDN](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome)
 
+![DockerHub Stars](https://img.shields.io/docker/stars/pizycki/ravendb.svg) [![DockerHub Pulls](https://img.shields.io/docker/pulls/pizycki/ravendb.svg)]() [![GitHub stars](https://img.shields.io/github/stars/pizycki/ravencage-3.5.svg?style=social&label=Star)]() [![Build status](https://ci.appveyor.com/api/projects/status/ab7oryewihivh46x?svg=true)](https://ci.appveyor.com/project/pizycki/ravencage-3-5)
+
 # Requirements
 
 Windows 2016 build 14393 or Windows 10 build 14393.222 with installed Windows Containers.
@@ -56,9 +58,9 @@ docker run -d -p 5555:8080 pizycki/ravendb:latest
 ### Automated 
 [![Build status](https://ci.appveyor.com/api/projects/status/ab7oryewihivh46x?svg=true)](https://ci.appveyor.com/project/pizycki/ravencage-3-5)
 
-Automated build are initialized on every **tagged** commit. 
+Automated builds are initialized on every **tagged** commit. 
 
-Thanks to [AppVeyor](http://appyveyor.com) for letting use their platform! You are the real MVP!
+Thanks to [AppVeyor](http://appyveyor.com) for letting use their platform! **You are the real MVP!**
 
 ### Manual
 Build image with `Build.ps1` script.
