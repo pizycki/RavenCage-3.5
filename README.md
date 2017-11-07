@@ -79,6 +79,9 @@ DockerHub credentials are stored in `credentials` file or can be passed through 
 # FAQ
 
 ## I cannot access my RavenDB server website.
-There is something wrong with `localhost`, Win2016 and Docker. I have no idea what can that be.
+There is something wrong with `localhost`, Windows and Docker. I have no idea what can that be.
 To get access to RavenDB website, get container IP. Simply type `docker inspect <container_ID>` and look for `Networks.IPAddress`.
 Make sure the port you mapped to is open in your firewall settings!
+
+**Update 11.2017**
+According to [this article](https://blogs.technet.microsoft.com/networking/2017/11/06/available-to-windows-10-insiders-today-access-to-published-container-ports-via-localhost127-0-0-1/), from Windows 10 build 17025 `localhost` and `127.0.0.1` should work as expected.
