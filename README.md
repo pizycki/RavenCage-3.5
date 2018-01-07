@@ -56,16 +56,15 @@ docker run -d -p 5555:8080 pizycki/ravendb:latest
 ## Build
 
 ### Automated 
-[![Build status](https://ci.appveyor.com/api/projects/status/ab7oryewihivh46x?svg=true)](https://ci.appveyor.com/project/pizycki/ravencage-3-5)
 
-Automated builds are initialized on every **tagged** commit. 
+[Automated builds](https://ci.appveyor.com/project/pizycki/ravencage-3-5) are initialized on every **tagged** commit. 
 
 Thanks to [AppVeyor](http://appyveyor.com) for letting use their platform! **You are the real MVP!**
 
 ### Manual
 Build image with `Build.ps1` script.
 
-Remember to replace `<tag>` with actual tag, i.e.: RavenDB version.
+Remember to replace `<tag>` with actual tag name, i.e.: RavenDB version.
 
 ```
 & .\Build-Image.ps1 ` 
@@ -76,18 +75,7 @@ Remember to replace `<tag>` with actual tag, i.e.: RavenDB version.
 
 DockerHub credentials are stored in `credentials` file or can be passed through via parameters.
 
-# FAQ
+## Not up to date?
+Starting from January 2018 this image will be updated **on request only**.
 
-## I cannot access my RavenDB server website.
-
-Make sure the port you mapped to is open in your firewall settings!
-
-~~There is something wrong with `localhost`, Windows and Docker. I have no idea what can that be.
-To get access to RavenDB website, get container IP. Simply type `docker inspect <container_ID>` and look for `Networks.IPAddress`.~~
-
-
-**Update 11.2017**
-
-According to [this article](https://blogs.technet.microsoft.com/networking/2017/11/06/available-to-windows-10-insiders-today-access-to-published-container-ports-via-localhost127-0-0-1/), from Windows 10 build 17025 `localhost` and `127.0.0.1` should work as expected.
-
-
+If you see that new RavenDB version is out and you'd like to get it from `pizycki/ravendb`, create an issue or tweet me!
